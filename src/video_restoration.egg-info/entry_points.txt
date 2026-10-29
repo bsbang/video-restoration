@@ -1,0 +1,2 @@
+[console_scripts]
+video-restore = cli:main

@@ -1,9 +1,9 @@
 # SRS (요구사항 명세서) - video-restoration
 
 ## 1. 개요
-- 목표: OpenCV and FFmpeg based vintage camcorder video restoration and upscaling pipeline
+- 목표: OpenCV and NumPy based vintage camcorder video restoration pipeline with deinterlacing, denoising, CLAHE contrast, VHS color noise removal, side-by-side comparison, PSNR/SSIM metrics, CLI tool, and unit tests
 
 ## 2. 기능 요구사항 (Functional Requirements)
-- **FR-01 (코어 엔진 및 UI)**: 핵심 데이터 구조, 화면 렌더링 및 기본 레이아웃 구현
-- **FR-02 (핵심 인터랙션 및 로직)**: 사용자 입력 처리, 상태 전이, 게임/비즈니스 규칙 및 점수/상태 기록(localStorage 등)
-- **FR-03 (편의 기능 및 모바일/사운드)**: 반응형 터치/키보드 조작, 효과음 또는 예외 처리 및 리셋 기능
+- **FR-01 (복원 파이프라인 코어)**: YADIF 스타일 보간 디인터레이싱, 가우시안/바이래터럴 노이즈 제거, CLAHE 명암비 개선 및 VHS 크로마 블리드 제거 알고리즘 구현
+- **FR-02 (품질 평가 및 비교, CLI)**: PSNR 및 SSIM 메트릭 측정, 원본/결과물 Side-by-Side 비교 및 이미지 저장, 명령어 기반 인터페이스(CLI) 구현
+- **FR-03 (유닛 테스트 및 안정성)**: 핵심 알고리즘 및 파이프라인 단계별 유닛 테스트 작성 및 예외 처리

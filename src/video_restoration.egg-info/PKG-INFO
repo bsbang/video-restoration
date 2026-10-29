@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: video-restoration
+Version: 0.1.0
+Summary: OpenCV and NumPy based vintage camcorder video restoration pipeline
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: opencv-python>=4.5.0
+Requires-Dist: numpy>=1.20.0
+Requires-Dist: scikit-image>=0.18.0
