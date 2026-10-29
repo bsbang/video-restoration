@@ -1,5 +1,7 @@
 pyproject.toml
 src/video_restoration/clahe.py
+src/video_restoration/color_noise.py
+src/video_restoration/comparison.py
 src/video_restoration/deinterlace.py
 src/video_restoration/denoise.py
 src/video_restoration/metrics.py
@@ -10,4 +12,5 @@ src/video_restoration.egg-info/dependency_links.txt
 src/video_restoration.egg-info/entry_points.txt
 src/video_restoration.egg-info/requires.txt
 src/video_restoration.egg-info/top_level.txt
+tests/test_advanced.py
 tests/test_restoration.py
