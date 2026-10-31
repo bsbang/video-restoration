@@ -1,15 +1,8 @@
 {
   "project": "video-restoration",
-  "current_phase": "Sprint 3: AI Super-Resolution (Real-ESRGAN)",
-  "active_sprint": 3,
-  "status": "READY_TO_START",
+  "current_goal": "Sprint 3 Real-ESRGAN 초해상도 모듈 개발",
+  "status": "QUEUED",
   "approved": false,
-  "tasks": [
-    "Sprint 1: OpenCV/CLAHE 기반 전통적 복원 파이프라인 (완료)",
-    "Sprint 2: 텔레그램 12대 원격 제어 인프라 및 데몬 안정화 (완료)",
-    "Sprint 3-1: Real-ESRGAN 경량 모델 및 타일 기반 추론기 구현 (대기)",
-    "Sprint 3-2: 복원 전후 비교 합성기 및 텔레그램 /run 연동 (대기)",
-    "Sprint 3-3: 단위 테스트(/test) 작성 및 CI 파이프라인 검증 (대기)"
-  ],
-  "last_updated": "2026-10-31"
+  "last_task_id": "TASK-1793450384",
+  "updated_at": "2026-10-31 12:39:44"
 }
