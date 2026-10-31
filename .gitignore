@@ -1,4 +1,17 @@
-outputs/*.mp4
-outputs/*.avi
+# 환경 변수 및 보안 토큰 (필수 차단)
 .env
+
+# 사전 학습 모델 가중치 (대용량 파일)
+weights/*.pth
+weights/*.pt
+
+# 동적 런타임 산출물
+outputs/*
+!outputs/.gitkeep
+
+# 파이썬 캐시 및 가상환경
 __pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/

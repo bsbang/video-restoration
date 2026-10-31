@@ -1,0 +1,9 @@
+opencv-python-headless
+numpy
+torch>=2.0.0
+torchvision
+realesrgan
+basicsr
+pytest
+requests
+python-dotenv

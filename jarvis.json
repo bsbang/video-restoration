@@ -1,6 +1,13 @@
 {
-  "name": "video-restoration",
-  "test_cmd": "pytest -v",
+  "project_name": "video-restoration",
+  "version": "0.3.0",
+  "description": "Cloud Shell 기반 전통적 영상 처리 및 AI 초해상도(Real-ESRGAN) 하이브리드 복원 파이프라인",
+  "environment": {
+    "python": "3.10+",
+    "framework": "PyTorch-CPU / OpenCV"
+  },
   "demo_cmd": "python3 scripts/demo.py",
-  "artifact_dir": "outputs"
+  "test_cmd": "pytest tests/",
+  "clean_cmd": "find . -type d -name '__pycache__' -exec rm -rf {} +",
+  "entrypoint": "src/main.py"
 }
