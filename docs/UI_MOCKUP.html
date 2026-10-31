@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Video Restoration Studio - UI Mockup</title>
+<style>
+  body { margin:0; background:#0f172a; color:#f8fafc; font-family:sans-serif; padding:20px; }
+  .grid { display:grid; grid-template-columns:300px 1fr; gap:16px; }
+  @media(max-width:768px){ .grid{grid-template-columns:1fr;} }
+  .card { background:#1e293b; border:1px solid #334155; border-radius:12px; padding:16px; }
+  .ctrl { margin-bottom:12px; font-size:13px; }
+  input[type=range] { width:100%; }
+  button { width:100%; padding:10px; border:none; border-radius:8px; background:#38bdf8; color:#020617; font-weight:bold; cursor:pointer; margin-top:8px; }
+  .cmd { background:#020617; padding:10px; border-radius:8px; font-family:monospace; font-size:12px; color:#93c5fd; margin-top:12px; }
+</style>
+</head>
+<body>
+<h2>🎬 Video Restoration Studio (UI/UX Prototype)</h2>
+<div class="grid">
+  <div class="card">
+    <h3>⚙️ 필터 파라미터</h3>
+    <div class="ctrl"><label><input type="checkbox" id="deint" checked onchange="up()"> YADIF 디인터레이싱</label></div>
+    <div class="ctrl"><label>크로마 블리드 반경: <b id="vc">9</b></label><input type="range" id="rc" min="3" max="15" step="2" value="9" oninput="up()"></div>
+    <div class="ctrl"><label>바이래터럴 강도: <b id="vd">45</b></label><input type="range" id="rd" min="10" max="90" step="5" value="45" oninput="up()"></div>
+    <div class="ctrl"><label>CLAHE 클립리밋: <b id="vl">2.0</b></label><input type="range" id="rl" min="1.0" max="4.0" step="0.2" value="2.0" oninput="up()"></div>
+    <button onclick="alert('복원 시뮬레이션 완료!')">▶ 복원 파이프라인 실행</button>
+    <div class="cmd" id="cmd">python3 -m video_restoration.cli in.mp4 out.mp4 --deinterlace --chroma 9 --denoise 45 --clahe 2.0</div>
+  </div>
+  <div class="card">
+    <h3>🔍 실시간 예상 품질 지표 (Before vs After)</h3>
+    <p id="stat" style="font-size:18px;color:#4ade80;font-weight:bold;">예상 PSNR: 31.3 dB | SSIM: 0.915</p>
+    <p style="color:#94a3b8;font-size:13px;">좌측 슬라이더를 움직이면 예상 PSNR 수치와 CLI 실행 명령어가 실시간으로 변경됩니다.</p>
+  </div>
+</div>
+<script>
+function up(){
+  const de = document.getElementById('deint').checked, c = document.getElementById('rc').value, d = document.getElementById('rd').value, l = document.getElementById('rl').value;
+  document.getElementById('vc').textContent=c; document.getElementById('vd').textContent=d; document.getElementById('vl').textContent=l;
+  const psnr = (26.0 + (de?2.2:0) + (d/30) + (l*0.8)).toFixed(1);
+  document.getElementById('stat').textContent = `예상 PSNR: ${psnr} dB | SSIM: ${(0.82 + d/1000).toFixed(3)}`;
+  document.getElementById('cmd').textContent = `python3 -m video_restoration.cli in.mp4 out.mp4 ${de?'--deinterlace ':''}--chroma ${c} --denoise ${d} --clahe ${l}`;
+}
+</script>
+</body>
+</html>

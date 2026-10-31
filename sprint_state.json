@@ -1,0 +1,40 @@
+{
+  "project_id": "video-restoration",
+  "project_name": "video-restoration",
+  "current_phase": "MOCKUP_REVIEW",
+  "active_sprint": 1,
+  "ui_ux_gate": {
+    "approved": false,
+    "feedback_history": []
+  },
+  "sprints": [
+    {
+      "sprint_id": 1,
+      "name": "Sprint 1: UI/UX 목업 및 사용성 검증",
+      "status": "awaiting_review",
+      "gate_type": "UI_UX_MOCKUP",
+      "tasks": [
+        {
+          "id": "T1-1",
+          "title": "핵심 UI 레이아웃 및 동선 검토",
+          "status": "done"
+        }
+      ],
+      "feedback": []
+    },
+    {
+      "sprint_id": 2,
+      "name": "Sprint 2: 코어 파이프라인 및 로직 구현",
+      "status": "pending",
+      "gate_type": "CODE_AND_TEST",
+      "tasks": [
+        {
+          "id": "T2-1",
+          "title": "백엔드 로직 연동 및 단위 테스트",
+          "status": "pending"
+        }
+      ],
+      "feedback": []
+    }
+  ]
+}

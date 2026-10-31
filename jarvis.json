@@ -1,0 +1,6 @@
+{
+  "name": "video-restoration",
+  "test_cmd": "pytest -v",
+  "demo_cmd": "python3 scripts/demo.py",
+  "artifact_dir": "outputs"
+}
